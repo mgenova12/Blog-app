@@ -1,0 +1,13 @@
+<h2> Signup! </h2>
+
+<%= form_tag '/blogs', method: :post do  %>
+
+  First name:<p><input type="text" name="first_name"></p>
+  Last name:<p><input type="text" name="last_name"></p>
+  Email:<p><input type="email" name="email"></p>
+  Password:<p><input type="password" name="password"></p>
+  Confirm Password:<p><input type="password" name="password_confirmation"></p>
+
+<p><input type="submit" value="Create"></p>
+
+<% end %>

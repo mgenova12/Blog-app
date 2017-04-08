@@ -1,0 +1,9 @@
+<h2>Here you can create your own Blog Post </h2>
+
+<%= form_tag '/blogs', method: :post do %>
+
+  Blog Title: <p><input type="text" name="title"></p>
+  Text: <p><textarea type="text" name="content" rows="10" cols="90"> </textarea></p>
+  <input type="hidden" name="author">
+
+<% end %>
