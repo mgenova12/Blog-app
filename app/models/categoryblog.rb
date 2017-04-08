@@ -1,0 +1,2 @@
+class Categoryblog < ApplicationRecord
+end

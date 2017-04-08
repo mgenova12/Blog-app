@@ -1,2 +1,14 @@
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
+
+<h2><%= @blog.title %></h2>
+<h5>Author:<%= @blog.author %></h5>
+
+<hr>
+
+
+<h4><%= @blog.content %> </h4>
+
+
+<form>
+    <button formaction="/blogs/<%= @blog.id %>/edit">Edit Post</button>
+</form>
+

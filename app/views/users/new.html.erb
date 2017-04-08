@@ -1,13 +1,33 @@
 <h2> Signup! </h2>
 
-<%= form_tag '/blogs', method: :post do  %>
+<%= form_tag '/users', method: :post do  %>
 
-  First name:<p><input type="text" name="first_name"></p>
-  Last name:<p><input type="text" name="last_name"></p>
-  Email:<p><input type="email" name="email"></p>
-  Password:<p><input type="password" name="password"></p>
-  Confirm Password:<p><input type="password" name="password_confirmation"></p>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">First name:</span>
+    <input type="text" class="form-control" name="first_name" aria-describedby="basic-addon1" >
+  </div>
 
-<p><input type="submit" value="Create"></p>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Last name:</span>
+    <input type="text" class="form-control" name="last_name" aria-describedby="basic-addon1" >
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Email:</span>
+    <input type="email" class="form-control" name="email" aria-describedby="basic-addon1" >
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Password:</span>
+    <input type="password" class="form-control" name="password" aria-describedby="basic-addon1" >
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Confirm Password:</span>
+    <input type="password" class="form-control" name="password_confirmation" aria-describedby="basic-addon1" >
+  </div>
+
+
+  <input type="submit" value="Create">
 
 <% end %>

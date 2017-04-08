@@ -1,32 +1,60 @@
 class BlogsController < ApplicationController
   def index
-    blogs = Blog.all
-
+    @blogs = Blog.all
   end
 
   def new 
 
-
   end
 
   def create 
-    
-    
+    blog = Blog.new(
+      title: params[:title],
+      content: params[:content],
+      author: current_user.first_name
+      )
+
+    if blog.save
+      flash[:success] = "Your blog as been added"
+      redirect_to "/blogs"
+    elsif blog.errors.any?
+      redirect_to 'new.html.erb'
+    end
 
   end
 
-  # def show
+  def show
+    @blog = Blog.find(params[:id])
+  end
+
+  def edit
+    @blog = Blog.find(params[:id])
+
+  end
+
+  def update 
+    @blog = Blog.find(params[:id])
+
+    @blog.update(
+      title: params[:title],
+      content: params[:content]
+      )
+
+    
+    flash[:warning] = "This post has been changed"
+
+    redirect_to "/blogs/#{@blog.id}"
 
 
-  # end
+  end
 
-  # def edit
+  def destroy
+    @blog = Blog.find(params[:id])
+
+    @blog.destroy
+
+    redirect_to '/blogs'
+  end
 
 
-  # end
-
-  # def destroy
-
-
-  # end
 end
