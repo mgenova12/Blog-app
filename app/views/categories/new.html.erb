@@ -1,0 +1,14 @@
+<h2> Here you can create a category! </h2>
+
+<%= form_tag '/categories', method: :post do %>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Category: </span>
+    <input type="text" class="form-control" name="category" aria-describedby="basic-addon1">
+  </div>
+
+
+  <input type="submit" value="Create Category">
+
+
+<% end  %>

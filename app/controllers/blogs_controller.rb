@@ -1,20 +1,21 @@
 class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
+
+
   end
 
   def new 
-
   end
 
   def create 
     blog = Blog.new(
       title: params[:title],
       content: params[:content],
-      author: current_user.first_name
+      author: current_user.first_name,
       )
 
-    if blog.save
+    if blog.save  
       flash[:success] = "Your blog as been added"
       redirect_to "/blogs"
     elsif blog.errors.any?
@@ -29,6 +30,7 @@ class BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find(params[:id])
+    @categories = Category.all
 
   end
 
@@ -39,12 +41,17 @@ class BlogsController < ApplicationController
       title: params[:title],
       content: params[:content]
       )
-
     
+    category = Categoryblog.new(
+        blog_id: params[:id],
+        category_id: params[:category_id]
+      )
+
+    category.save
+
     flash[:warning] = "This post has been changed"
 
     redirect_to "/blogs/#{@blog.id}"
-
 
   end
 
@@ -55,6 +62,5 @@ class BlogsController < ApplicationController
 
     redirect_to '/blogs'
   end
-
 
 end
