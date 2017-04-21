@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
       )
 
     if category.save  
-      flash[:success] = "Your blog as been added"
+      flash[:success] = "Your category as been added"
       redirect_to "/blogs"
     elsif category.errors.any?
       redirect_to 'new.html.erb'

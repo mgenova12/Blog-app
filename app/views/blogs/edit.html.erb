@@ -13,16 +13,17 @@
       <textarea class="form-control" rows="10" id="comment" name="content" placeholder="<%= @blog.content %>"></textarea>
     </div>
 
- <div class="space"
-    <div class="form-group">
-      <label for="sel1">Category:</label>
-      <select class="form-control" name="category_id" id="sel1">
-        <% @categories.each do |category| %>
-        <option value="<%= category.id %>"><%= category.name %></option>
-        <% end %>
-      </select>
-    </div>
-  </div>  
+   <div class="space"
+      <div class="form-group">
+        <label for="sel1">Category:</label>
+        <select class="form-control" name="category_id" id="sel1">
+        
+          <% @categories.each do |category| %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>  
 
   <button type="submit" class="btn btn-default">Edit</button>
 <% end  %>

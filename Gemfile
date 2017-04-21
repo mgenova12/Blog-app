@@ -24,6 +24,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker'
 
+gem "chartkick"
+
+gem 'seed_dump'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 
 # Use jquery as the JavaScript library
