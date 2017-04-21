@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
+
   end
 
   def new 
@@ -35,7 +36,6 @@ class BlogsController < ApplicationController
   def edit
     @blog = Blog.find(params[:id])
     @categories = Category.all
-
   end
 
   def update 
