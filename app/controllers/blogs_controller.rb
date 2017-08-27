@@ -16,6 +16,8 @@ class BlogsController < ApplicationController
       category_id: params[:category_id]
       )
 
+
+
     if blog.save  
       flash[:success] = "Your blog as been added"
       category = Categoryblog.create!(

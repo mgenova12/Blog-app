@@ -5,15 +5,20 @@ class CategoriesController < ApplicationController
 
   def create
 
-    category = Category.new(
+    @category = Category.new(
       name: params[:category]
       )
 
-    if category.save  
+    @category.save
+
+    if @category.save  
       flash[:success] = "Your category as been added"
       redirect_to "/blogs"
-    elsif category.errors.any?
+    else
+      flash[:danger] = "Please add a Category"
       redirect_to 'new.html.erb'
     end
+
   end
+  
 end

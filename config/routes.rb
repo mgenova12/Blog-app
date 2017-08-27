@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  get '/blogs' => 'blogs#index'
-  get '/blogs/new' => 'blogs#new'
-  post '/blogs' => 'blogs#create'
-  get 'blogs/:id' => 'blogs#show'
-  get '/blogs/:id/edit' => 'blogs#edit'
-  patch 'blogs/:id' => 'blogs#update'
-  delete '/blogs/:id' => 'blogs#destroy'
+
+  resources :blogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
@@ -14,8 +9,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get 'categories/new' => 'categories#new'
-  post 'categories' => 'categories#create'
+  get '/categories/new' => 'categories#new'
+  post '/categories' => 'categories#create'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
